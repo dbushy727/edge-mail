@@ -21,8 +21,8 @@ export class MailgunAdapter implements ProviderAdapter {
     this.secretKey = config.auth.secretKey
   }
 
-  public send(_mailable: Mailable): Promise<SendResponse> {
-    console.log('Sending with Mailgun')
+  public send(mailable: Mailable): Promise<SendResponse> {
+    console.log('Sending with Mailgun', mailable)
     return Promise.resolve({ status: 200 })
   }
 }

@@ -21,8 +21,8 @@ export class SparkpostAdapter implements ProviderAdapter {
     this.secretKey = config.auth.secretKey
   }
 
-  public send(_mailable: Mailable): Promise<SendResponse> {
-    console.log('Sending with Sparkpost')
+  public send(mailable: Mailable): Promise<SendResponse> {
+    console.log('Sending with Sparkpost', mailable)
     return Promise.resolve({ status: 200 })
   }
 }

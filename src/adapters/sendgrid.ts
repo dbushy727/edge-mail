@@ -18,8 +18,8 @@ export class SendgridAdapter implements ProviderAdapter {
     this.apiKey = config.auth.apiKey
   }
 
-  public send(_mailable: Mailable): Promise<SendResponse> {
-    console.log('Sending with Sendgrid')
+  public send(mailable: Mailable): Promise<SendResponse> {
+    console.log('Sending with Sendgrid', mailable)
     return Promise.resolve({ status: 200 })
   }
 }
