@@ -1,28 +1,28 @@
-import { ProviderAdapter, Mailable, SendResponse } from "./adapter";
-import { MailConfig, ClientKeyAndSecretKey } from "../config";
+import { ProviderAdapter, Mailable, SendResponse } from './adapter'
+import { MailConfig, ClientKeyAndSecretKey } from '../config'
 
 interface SparkpostConfig {
-  provider: "sparkpost";
-  auth: ClientKeyAndSecretKey;
+  provider: 'sparkpost'
+  auth: ClientKeyAndSecretKey
 }
 
 export function isSparkpost(config: MailConfig): config is SparkpostConfig {
-  return config.provider === "sparkpost";
+  return config.provider === 'sparkpost'
 }
 
 export class SparkpostAdapter implements ProviderAdapter {
   // @ts-ignore
-  private clientKey: string;
+  private clientKey: string
   // @ts-ignore
-  private secretKey: string;
+  private secretKey: string
 
   constructor(config: SparkpostConfig) {
-    this.clientKey = config.auth.clientKey;
-    this.secretKey = config.auth.secretKey;
+    this.clientKey = config.auth.clientKey
+    this.secretKey = config.auth.secretKey
   }
 
   public send(_mailable: Mailable): Promise<SendResponse> {
-    console.log("Sending with Sparkpost");
-    return Promise.resolve({ status: 200 });
+    console.log('Sending with Sparkpost')
+    return Promise.resolve({ status: 200 })
   }
 }
