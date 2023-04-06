@@ -1,19 +1,19 @@
 {
-  "name": "next-mail",
-  "version": "1.0.0",
-  "description": "Send emails from your Next.js app",
+  "name": "edge-mail",
+  "version": "0.1.0-alpha.1",
+  "description": "Send emails from the edge",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "scripts": {
+    "build:cjs": "tsc --project tsconfig.build.json --module commonjs --outDir dist/cjs",
+    "build:esm": "tsc --project tsconfig.build.json",
     "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint \"{**/*,*}.{js,ts}\"",
-    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts}\"",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run prettier && npm run lint"
+    "prepublishOnly": "npm test && npm run prettier && npm run lint",
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts}\"",
+    "test": "jest"
   },
   "keywords": [
     "email",
@@ -21,10 +21,12 @@
     "nextjs",
     "next.js",
     "next-mail",
-    "nextmail"
+    "nextmail",
+    "edge",
+    "edge-mail"
   ],
   "author": "dbushy727",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
     "@types/jest": "^29.5.0",
     "@types/node": "^18.15.11",
@@ -39,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dbushy727/next-mail.git"
+    "url": "git+https://github.com/dbushy727/edge-mail.git"
   },
   "files": [
     "dist",

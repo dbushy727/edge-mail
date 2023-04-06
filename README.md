@@ -1,1 +1,1 @@
-# Next Mail
+# Edge Mail
