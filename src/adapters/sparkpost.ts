@@ -1,4 +1,4 @@
-import { ProviderAdapter, Mailable } from "./adapter";
+import { ProviderAdapter, Mailable, SendResponse } from "./adapter";
 import { MailConfig, ClientKeyAndSecretKey } from "../config";
 
 interface SparkpostConfig {
@@ -21,8 +21,8 @@ export class SparkpostAdapter implements ProviderAdapter {
     this.secretKey = config.auth.secretKey;
   }
 
-  public send(_mailable: Mailable): Promise<any> {
+  public send(_mailable: Mailable): Promise<SendResponse> {
     console.log("Sending with Sparkpost");
-    return Promise.resolve();
+    return Promise.resolve({ status: 200 });
   }
 }

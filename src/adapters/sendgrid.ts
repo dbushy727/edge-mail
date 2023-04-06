@@ -1,4 +1,4 @@
-import { ProviderAdapter, Mailable } from "./adapter";
+import { ProviderAdapter, Mailable, SendResponse } from "./adapter";
 import { MailConfig, ApiToken } from "../config";
 
 interface SendgridConfig {
@@ -18,8 +18,8 @@ export class SendgridAdapter implements ProviderAdapter {
     this.apiKey = config.auth.apiKey;
   }
 
-  public send(_mailable: Mailable): Promise<any> {
+  public send(_mailable: Mailable): Promise<SendResponse> {
     console.log("Sending with Sendgrid");
-    return Promise.resolve();
+    return Promise.resolve({ status: 200 });
   }
 }

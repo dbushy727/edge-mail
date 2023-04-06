@@ -6,7 +6,9 @@ export interface Mailable {
   subject: string;
   body: string;
 }
-
+export interface SendResponse {
+  status: number;
+}
 export interface ProviderAdapter {
-  send(mailable: Mailable): Promise<any>;
+  send(mailable: Mailable): Promise<SendResponse>;
 }
