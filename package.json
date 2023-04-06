@@ -25,7 +25,7 @@
     "edge",
     "edge-mail"
   ],
-  "author": "dbushy727",
+  "author": "Daniel Bushkanets <d.bushkanets@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^29.5.0",
